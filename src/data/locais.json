@@ -4,7 +4,7 @@
     "nome": "Parque da Cidade (CLT)",
     "descricao": "Principal área verde e de lazer da cidade.",
     "descricaoCompleta": "O Parque da Cidade - Ayrton Senna da Silva (antigo CLT) é o local perfeito para atividades ao ar livre. Conta com uma ampla lagoa com pedalinhos, pistas de caminhada e ciclismo, quadras esportivas, churrasqueiras, parquinhos infantis e um espaço dedicado aos pets (Parcão).",
-    "imagem": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAH018UcEJpp8O_sl96aiOS0epdac5Y7-vdh1_W8IOd3Sx1UPQmsVRvCv_GfgR7bTqOjLkJc80FKCVhSuuB6vvvg7WTJvfWgXHqkjt3gTCQ9wLL-u2lNQTTj3c4MhM7bXmPElH0hzg=s680-w680-h510-rw",
+    "imagem": "https://portalvv8.com.br/images/noticias/47691/1fb3d0bbcee6171f939f3053103e603a.webp",
     "localizacao": "Jardim Pinheiros",
     "estrelas": 4.7
   },
@@ -14,7 +14,7 @@
     "descricao": "Patrimônio histórico e cultural de Valinhos.",
     "descricaoCompleta": "Localizada no coração da cidade, a igreja é tida como uma das mais belas do Estado de São Paulo por seu estilo gótico-romano. É um ponto de encontro e símbolo da fé e tradição local.",
     "imagem": "https://caminhosculturais.com.br/wp-content/uploads/2021/03/valinhos-igreja-matriz-sao-sebastiao-sergio-luiz-jorge-web-1024x677.jpg",
-    "localizacao": "Centro",
+    "localizacao": "Centro de Valinhos",
     "estrelas": 4.8
   },
   {
@@ -41,6 +41,7 @@
     "descricao": "O principal centro de compras, gastronomia e lazer da cidade.",
     "descricaoCompleta": "Um ambiente climatizado, seguro e familiar. O shopping oferece diversas opções de lojas, uma praça de alimentação com restaurantes variados, salas de cinema modernas e espaços de entretenimento para as crianças. É o local ideal para um passeio confortável com a família.",
     "imagem": "https://lh3.googleusercontent.com/p/AF1QipOIbw6A2ba9p9ZOjrCCtdswODNwWUvvIvjE--zj=s680-w680-h510-rw",
-    "localizacao": "Vila Pagano"
+    "localizacao": "Vila Pagano",
+    "estrelas": 4.2
   }
 ]

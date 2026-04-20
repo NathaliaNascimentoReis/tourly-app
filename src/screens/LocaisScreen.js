@@ -1,22 +1,21 @@
-import { View, StyleSheet, FlatList, Text, Image } from 'react-native';
+import { View, StyleSheet, FlatList, Text, Image, useWindowDimensions } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import pontosTuristicos from '../data/locais.json';
 
 export default function LocaisScreen() {
+    const { width } = useWindowDimensions();
+    const numColumns = width > 600 ? 2 : 1;
+
     const renderItem = ({ item }) => (
-        <View style={styles.card}>
+        <View style={[styles.card, { width: numColumns === 2 ? '48%' : '100%' }]}>
             <Image source={{ uri: item.imagem }} style={styles.image} />
             <View style={styles.info}>
                 <Text style={styles.nome}>{item.nome}</Text>
-                <Text style={styles.descricao} numberOfLines={2}>
-                    {item.descricao}
-                </Text>
-                <Text style={styles.avaliacao}>Avaliação: {item.estrelas}/5</Text>
+                <Text style={styles.descricao}>{item.descricao}</Text>
+                <Text style={styles.avaliacao}>Avaliação: {item.estrelas}</Text>
                 <View style={styles.local}>
                     <MaterialIcons name="location-pin" size={23} color="black" />
-                    <Text style={styles.localizacao} numberOfLines={2}>
-                        {item.localizacao}
-                    </Text>
+                    <Text style={styles.localizacao}>{item.localizacao}</Text>
                 </View>
             </View>
         </View>
@@ -34,9 +33,12 @@ export default function LocaisScreen() {
                 <Text style={styles.textoTitulo}>Restaurantes</Text>
 
                 <FlatList
+                    key={numColumns}
                     data={pontosTuristicos}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={renderItem}
+                    numColumns={numColumns}
+                    columnWrapperStyle={numColumns > 1 ? styles.row : null}
                 />
             </View>
         </View>
@@ -70,39 +72,45 @@ const styles = StyleSheet.create({
         fontSize: 27,
         fontWeight: 600,
     },
+    row: {
+        flex: 1,
+        justifyContent: 'space-around',
+    },
     card: {
         marginTop: 10,
-        width: '100%',
+        width: '40%',
         height: 'auto',
         backgroundColor: '#D9C3D8',
         borderRadius: 10,
         overflow: 'hidden',
-        flexDirection: 'row',
-        padding: '3%',
+        padding: 12,
     },
     image: {
-        width: '25%',
-        height: 200,
+        width: '100%',
+        height: 120,
         borderRadius: 5,
+        marginBottom: 10,
     },
     info: {
-        paddingLeft: '2%',
+        width: '100%',
     },
     nome: {
         color: '#000000',
         fontSize: 21,
         fontWeight: 600,
+        flexWrap: 'wrap',
     },
     descricao: {
         color: '#000000',
-        fontSize: 18,
-        marginTop: '1%',
+        fontSize: 17,
+        flexWrap: 'wrap',
     },
     avaliacao: {
         color: '#000000',
-        fontSize: 18,
+        fontSize: 17,
         fontWeight: 600,
-        marginTop: '10%',
+        marginTop: 10,
+        marginBottom: 20,
     },
     local: {
         flexDirection: 'row',
