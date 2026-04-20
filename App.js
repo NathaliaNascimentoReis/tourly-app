@@ -1,17 +1,17 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+// Screens
 import ContatoScreen from "./src/screens/ContatoScreen.js";
-//import InicioScreen from "./src/screens/InicioScreen.js";
-import DetalhesScreen from "./src/screens/DetalhesScreen.js"
+import DetalhesScreen from "./src/screens/DetalhesScreen.js";
 import LocaisScreen from "./src/screens/LocaisScreen.js";
 import RestaurantesScreen from "./src/screens/RestaurantesScreen.js";
 import SobreScreen from "./src/screens/SobreScreen.js";
@@ -20,18 +20,40 @@ const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
+
+// 🔹 TABS
 function TabNavigator() {
   return (
-    <Tab.Navigator screenOptions=
-      {{
+    <Tab.Navigator
+      screenOptions={{
         headerShown: false,
-      }}>
-      <Tab.Screen name="Pontos Turísticos" component={LocaisScreen} />
-      <Tab.Screen name="Restaurantes" component={RestaurantesScreen} />
+      }}
+    >
+      <Tab.Screen
+        name="Pontos Turísticos"
+        component={LocaisScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="map-marker" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Restaurantes"
+        component={RestaurantesScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="silverware-fork-knife" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
 
+
+// 🔹 STACK (Tabs + Detalhes)
 function StackNavigator({ navigation }) {
   return (
     <Stack.Navigator>
@@ -39,9 +61,13 @@ function StackNavigator({ navigation }) {
         name="Tourly"
         component={TabNavigator}
         options={{
+          headerStyle: { backgroundColor: "#6A1B9A" },
+          headerTintColor: "#fff",
+          headerTitleAlign: "center",
+
           headerLeft: () => (
             <TouchableOpacity
-              onPress={() => navigation.openDrawer()}
+              onPress={() => navigation.getParent()?.openDrawer()}
               style={{ marginLeft: 15 }}
             >
               <MaterialCommunityIcons name="menu" size={30} color="#fff" />
@@ -59,11 +85,11 @@ function StackNavigator({ navigation }) {
           ),
         }}
       />
+
       <Stack.Screen
         name="Detalhes"
         component={DetalhesScreen}
         options={{
-          headerShown: true,
           headerStyle: { backgroundColor: "#6A1B9A" },
           headerTintColor: "#fff",
         }}
@@ -72,12 +98,14 @@ function StackNavigator({ navigation }) {
   );
 }
 
+
+// 🔹 APP PRINCIPAL
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Drawer.Navigator screenOptions={{ headerShown: false }}>
-          <Drawer.Screen name="Início" component={StackNavigation} />
+          <Drawer.Screen name="Início" component={StackNavigator} />
           <Drawer.Screen name="Sobre" component={SobreScreen} />
           <Drawer.Screen name="Contato" component={ContatoScreen} />
         </Drawer.Navigator>
