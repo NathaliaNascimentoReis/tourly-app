@@ -30,7 +30,7 @@ export default function LocaisScreen() {
             </View>
 
             <View style={styles.main}>
-                <Text style={styles.textoTitulo}>Restaurantes</Text>
+                <Text style={styles.textoTitulo}>Pontos Turísticos</Text>
 
                 <FlatList
                     key={numColumns}
