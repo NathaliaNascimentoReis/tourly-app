@@ -2,15 +2,17 @@
   {
     "id": 1,
     "nome": "Ristorante Laura e Francesco",
+    "categoria": "Restaurante",
     "descricao": "Culinária italiana artesanal e sofisticada.",
     "descricaoCompleta": "Um dos mais premiados da região, focado em massas frescas, receitas tradicionais da Itália e uma carta de vinhos nobre. Ambiente intimista e exclusivo.",
     "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc3XM_nOkkbyi5D3mgnB6iGg2EY2VSuSyerg&s",
     "localizacao": "Chácaras Silvânia",
     "estrelas": 4.9
-  },
-  {
+},
+{
     "id": 2,
     "nome": "Eulenhof",
+    "categoria": "Restaurante",
     "descricao": "Uma imersão na cultura e gastronomia germânica.",
     "descricaoCompleta": "Localizado em um casarão de estilo medieval, oferece pratos clássicos alemães como joelho de porco e salsichões, acompanhados de cervejas especiais.",
     "imagem": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/43/0d/7c/eulenhof-valinhos-restaurante.jpg?w=900&h=-1&s=1",
@@ -20,33 +22,37 @@
   {
     "id": 3,
     "nome": "Bambuzal Restaurante",
+    "categoria": "Restaurante",
     "descricao": "Comida caipira feita no fogão à lenha.",
     "descricaoCompleta": "Restaurante rústico com clima de fazenda. Especialista em comida brasileira afetiva servida em um ambiente amplo e arborizado, ideal para famílias.",
     "imagem": "https://lh3.googleusercontent.com/p/AF1QipM58Mi3hEy2ctqh7SPgDKjkS04PBROcxQ4JPPOy=s680-w680-h510-rw",
     "localizacao": "Chácaras São Bento",
     "estrelas": 4.7
-  },
-  {
+},
+{
     "id": 4,
     "nome": "Nayas Culinária Árabe",
+    "categoria": "Restaurante",
     "descricao": "O melhor da culinária árabe tradicional.",
     "descricaoCompleta": "Referência em sabores do Oriente Médio, com esfihas, quibes e combinados preparados com temperos autênticos e receitas de família.",
     "imagem": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAEpx4_RGIWYsuUgN3XBqIPKqr1yqwIN7RGlnBqigahVZBtpohY6EYqpw4xjy_ZPvSWGnOPuMQeNrPEycsnWHovY87thEA0Mow9lI_CeVeGuZvTqFc5RDarxk0QpbwDm7XYfbvw=s680-w680-h510-rw",
     "localizacao": "Vila Embare",
     "estrelas": 4.7
-  },
-  {
+},
+{
     "id": 5,
     "nome": "Kitaki Sushi",
+    "categoria": "Restaurante",
     "descricao": "Sushis e sashimis frescos e variados.",
     "descricaoCompleta": "Tradicional casa japonesa em Valinhos, oferecendo sistema de rodízio premium e pratos à la carte com ingredientes de alta qualidade.",
     "imagem": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAFMCCxIqHhEH6hNbP18OGiYfvx0T7t5RIH_thOlHtB2-P4CNh3OvLI3JmYcSQ6MUhpLQps63IcBjlprHU6xG1YG52fSPZvX_TtHV2rihuJ1BgMV3R-R9Egj_8K9oLEMSjCA6O1nvSgFozk=s680-w680-h510-rw",
     "localizacao": "Vila Embare",
     "estrelas": 4.6
-  },
-  {
+},
+{
     "id": 6,
     "nome": "Amarelinho Restaurante",
+    "categoria": "Restaurante",
     "descricao": "Tradicional self-service de comida caseira.",
     "descricaoCompleta": "Um ícone da cidade para o almoço. Oferece uma grande variedade de pratos brasileiros, saladas e carnes em um ambiente simples e acolhedor.",
     "imagem": "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGb9M_v6aKjpLoo5Cyd4_9L0Svl_DT_e_7k0c83rkn6BKgxrXNt2zzEGjBqY-3rJoYUgNnNC7wMHp3ZiR0S0EbFq_K0QPyXGU8WELOI37QK98Kt2D-rdt6W4J0GB5oJ5MqvSlGAX3RhXuH7=s680-w680-h510-rw",
