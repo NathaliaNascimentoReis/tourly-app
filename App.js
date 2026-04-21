@@ -8,6 +8,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { DrawerActions } from "@react-navigation/native";
 
 // Screens
 import ContatoScreen from "./src/screens/ContatoScreen.js";
@@ -20,8 +21,6 @@ const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-
-// 🔹 TABS
 function TabNavigator() {
   return (
     <Tab.Navigator
@@ -53,7 +52,6 @@ function TabNavigator() {
 }
 
 
-// 🔹 STACK (Tabs + Detalhes)
 function StackNavigator({ navigation }) {
   return (
     <Stack.Navigator>
@@ -67,7 +65,7 @@ function StackNavigator({ navigation }) {
 
           headerLeft: () => (
             <TouchableOpacity
-              onPress={() => navigation.getParent()?.openDrawer()}
+              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
               style={{ marginLeft: 15 }}
             >
               <MaterialCommunityIcons name="menu" size={30} color="#fff" />
@@ -98,8 +96,6 @@ function StackNavigator({ navigation }) {
   );
 }
 
-
-// 🔹 APP PRINCIPAL
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
