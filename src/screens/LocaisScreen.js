@@ -1,8 +1,16 @@
-import { View, StyleSheet, FlatList, Text, Image, useWindowDimensions } from 'react-native';
+import {
+    View,
+    StyleSheet,
+    FlatList,
+    Text,
+    Image,
+    TouchableOpacity,
+    useWindowDimensions,
+} from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import pontosTuristicos from '../data/locais.json';
 
-export default function LocaisScreen() {
+export default function LocaisScreen({ navigation }) {
     const { width } = useWindowDimensions();
     const numColumns = width > 600 ? 2 : 1;
 
@@ -18,17 +26,16 @@ export default function LocaisScreen() {
                     <Text style={styles.localizacao}>{item.localizacao}</Text>
                 </View>
             </View>
+            <TouchableOpacity
+                style={styles.botao}
+                onPress={() => navigation.navigate('Detalhes', { id: item })}>
+                <Text style={styles.textoBotao}>Detalhes</Text>
+            </TouchableOpacity>
         </View>
     );
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <MaterialIcons name="menu" size={35} color="white" />
-                <Text style={styles.titulo}>Tourly</Text>
-                <MaterialIcons name="person" size={35} color="white" />
-            </View>
-
             <View style={styles.main}>
                 <Text style={styles.textoTitulo}>Pontos Turísticos</Text>
 
@@ -50,15 +57,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f0f4ff',
     },
-    header: {
-        width: '100%',
-        height: '10%',
-        backgroundColor: '#6F4074',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: '3%',
-        alignItems: 'center',
-    },
     titulo: {
         color: '#fff',
         fontSize: 25,
@@ -77,6 +75,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     card: {
+        justifyContent: 'space-between',
         marginTop: 10,
         width: '40%',
         height: 'auto',
@@ -119,5 +118,17 @@ const styles = StyleSheet.create({
         color: '#000000',
         fontSize: 18,
         fontWeight: 600,
+    },
+    botao: {
+        justifyContent: 'space-around',
+        marginTop: 30,
+        backgroundColor: '#965B96',
+        padding: 10,
+        borderRadius: 10,
+    },
+    textoBotao: {
+        textAlign: 'center',
+        color: '#ffffff',
+        fontSize: 18,
     },
 });
