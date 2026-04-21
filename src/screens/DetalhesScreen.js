@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f0f4ff',
     },
     main: {
-        margin: 30,
+        margin: 20,
     },
     scroll: {
         paddingBottom: 'auto',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     titulo: {
         color: '#000000',
-        fontSize: 25,
+        fontSize: 23,
         fontWeight: 'bold',
     },
     imagem: {
@@ -58,19 +58,19 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     nome: {
-        fontSize: 30,
+        fontSize: 25,
         color: '#6F4074',
         fontWeight: 'bold',
         marginBottom: 10,
     },
     descricao: {
         color: '#000000',
-        fontSize: 20,
+        fontSize: 18,
         flexWrap: 'wrap',
     },
     avaliacao: {
         color: '#000000',
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 600,
         marginTop: 20,
         marginBottom: 20,
@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
     },
     localizacao: {
         color: '#000000',
-        fontSize: 18,
+        fontSize: 17,
         fontWeight: 600,
     },
     descricaoCompleta: {
         marginTop: 30,
         color: '#000000',
-        fontSize: 18,
+        fontSize: 16,
     },
 });
