@@ -6,9 +6,16 @@ export default function DetalheScreen({ route }) {
 
     return (
         <View style={styles.container}>
-                <ScrollView contentContainerStyle={styles.scroll}>
-            <View style={styles.main}>
-                    <Text style={styles.titulo}>{id.categoria}</Text>
+            <ScrollView contentContainerStyle={styles.scroll}>
+                <View style={styles.main}>
+                    <View style={styles.tituloVoltar}>
+                        <Text
+                            style={styles.botao}
+                            onPress={() => navigation.navigate('')}>
+                            <MaterialIcons name="keyboard-arrow-left" size={24} color="black" />
+                        </Text>
+                        <Text style={styles.titulo}>{id.categoria}</Text>
+                    </View>
                     <View style={styles.card}>
                         <Image source={{ uri: id.imagem }} style={styles.imagem} />
                         <View style={styles.info}>
@@ -24,8 +31,8 @@ export default function DetalheScreen({ route }) {
                             <Text style={styles.descricaoCompleta}>{id.descricaoCompleta}</Text>
                         </View>
                     </View>
-            </View>
-                </ScrollView>
+                </View>
+            </ScrollView>
         </View>
     );
 }
@@ -45,6 +52,17 @@ const styles = StyleSheet.create({
         marginTop: 10,
         padding: 20,
         backgroundColor: '#D9C3D8',
+    },
+    tituloVoltar: {
+        flex: 1,
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+    },
+    botao: {
+        color: '#000000',
+        fontWeight: 'bold',
+        alignSelf: 'flex-end',
     },
     titulo: {
         color: '#000000',
